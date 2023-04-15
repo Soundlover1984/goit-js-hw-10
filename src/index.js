@@ -20,9 +20,7 @@ const refs = {
   refs.inputData.addEventListener(
     'input', debounce(e => {
       const inputValue = refs.inputData.value.trim();
-  
       cleanHtmlList();
-  
       if (inputValue !== '') {
         fetchCountries(inputValue).then(result => {
           if (result.length > 10) {
@@ -61,9 +59,7 @@ const refs = {
           <p style="font-size: 25px; text-shadow: 1px 1px 2px grey"><b>${country.name.official}</b></p>
           <p>Capital: <b>${country.capital}</b></p>
           <p>Population:<b>${country.population}</b></p>
-          <p>Languages: <b>${Object.values(country.languages)}</b></p>`;
-      })
-      .join('');
+          <p>Languages: <b>${Object.values(country.languages)}</b></p>`;}).join('');
     refs.countryInfo.innerHTML = markup;
   }
   
